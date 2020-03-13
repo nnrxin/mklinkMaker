@@ -15,9 +15,14 @@ SetControlDelay, -1
 SendMode Input
 SetWorkingDir %A_ScriptDir%    ;工作目录设置为当前
 OnExit, RunBeforeExit
+;自动保存类
 #Include <Class_IniSaved>
 global INI := new IniSaved(A_AppData "\mklinkMaker.ini")
 
+;当前版本
+global VERSION := 1.0
+
+;GUI建立
 Gui, +Resize +MinSize403x350 +E0x10  ;GUI可修改尺寸 +E0x10:拖放文件
 Gui, Font,, 微软雅黑   ;字体修改
 Gui, Color,, 0xCCE8CF   ;护眼绿色
